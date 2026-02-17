@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Represents a property returned from BatchData property search.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <label>Property</label>
+    <pluralLabel>Properties</pluralLabel>
+    <sharingModel>ReadWrite</sharingModel>
+    <nameField>
+        <type>Text</type>
+        <label>Property Name</label>
+    </nameField>
+
+    <!-- External unique Id from BatchData -->
+    <fields>
+        <fullName>External_Id__c</fullName>
+        <externalId>true</externalId>
+        <label>External Id</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+        <caseSensitive>false</caseSensitive>
+    </fields>
+
+    <!-- Address -->
+    <fields>
+        <fullName>Street__c</fullName>
+        <externalId>false</externalId>
+        <label>Street</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>City__c</fullName>
+        <externalId>false</externalId>
+        <label>City</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>State__c</fullName>
+        <externalId>false</externalId>
+        <label>State</label>
+        <length>2</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Zip__c</fullName>
+        <externalId>false</externalId>
+        <label>Zip</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+    </fields>
+
+    <!-- Geo -->
+    <fields>
+        <fullName>Latitude__c</fullName>
+        <externalId>false</externalId>
+        <label>Latitude</label>
+        <precision>9</precision>
+        <scale>6</scale>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Longitude__c</fullName>
+        <externalId>false</externalId>
+        <label>Longitude</label>
+        <precision>9</precision>
+        <scale>6</scale>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+    </fields>
+
+    <!-- Building -->
+    <fields>
+        <fullName>Living_Sqft__c</fullName>
+        <externalId>false</externalId>
+        <label>Living Sqft</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Bedrooms__c</fullName>
+        <externalId>false</externalId>
+        <label>Bedrooms</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Bathrooms__c</fullName>
+        <externalId>false</externalId>
+        <label>Bathrooms</label>
+        <precision>3</precision>
+        <scale>1</scale>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Year_Built__c</fullName>
+        <externalId>false</externalId>
+        <label>Year Built</label>
+        <precision>4</precision>
+        <scale>0</scale>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+    </fields>
+
+    <!-- Lot -->
+    <fields>
+        <fullName>Lot_Size_Sqft__c</fullName>
+        <externalId>false</externalId>
+        <label>Lot Size (Sqft)</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+    </fields>
+
+    <!-- Valuation -->
+    <fields>
+        <fullName>Estimated_Value__c</fullName>
+        <externalId>false</externalId>
+        <label>Estimated Value</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Price_Range_Min__c</fullName>
+        <externalId>false</externalId>
+        <label>Price Range Min</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Price_Range_Max__c</fullName>
+        <externalId>false</externalId>
+        <label>Price Range Max</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+
+    <!-- Sale -->
+    <fields>
+        <fullName>Last_Sale_Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Sale Price</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Last_Sale_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Sale Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+
+    <!-- Link to parent search -->
+    <fields>
+        <fullName>Search__c</fullName>
+        <externalId>false</externalId>
+        <label>Search</label>
+        <referenceTo>Property_Search__c</referenceTo>
+        <relationshipLabel>Properties</relationshipLabel>
+        <relationshipName>Properties</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+</CustomObject>

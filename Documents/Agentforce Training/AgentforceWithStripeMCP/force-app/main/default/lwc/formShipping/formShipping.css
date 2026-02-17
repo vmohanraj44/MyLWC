@@ -1,0 +1,18 @@
+.form-container {
+    /* Card container to mirror Figma padding and rounded corners while leveraging SLDS */
+    border-radius: 0.5rem; /* 8px */
+}
+
+.slds-form .slds-form-element {
+    /* Use Figma vertical gaps (8px per field group is already applied via slds classes).
+       Keep as hook for any future tuning to match pixel spec exactly. */
+}
+
+.slds-size_1-of-1 lightning-button {
+    width: 100%;
+}
+
+/* Optional: tighten textarea height similar to the Figma illustration */
+lightning-textarea textarea {
+    min-height: 6rem;
+}

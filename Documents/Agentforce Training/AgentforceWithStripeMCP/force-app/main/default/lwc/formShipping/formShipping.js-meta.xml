@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Form Shipping</masterLabel>
+    <description>SLDS-styled Shipping Information form based on Figma design.</description>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightning__FlowScreen</target>
+        <target>lightning__Tab</target>
+        <target>lightning__UtilityBar</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="fullName" type="String" label="Default Full Name" description="Pre-populate full name in flow."/>
+            <property name="location" type="String" label="Default Location" description="Pre-select a location in flow."/>
+            <property name="deliveryNote" type="String" label="Default Delivery Note" description="Pre-populate delivery note in flow."/>
+            <property name="acceptTerms" type="Boolean" label="Default Accept Terms" description="Pre-check accept terms in flow."/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

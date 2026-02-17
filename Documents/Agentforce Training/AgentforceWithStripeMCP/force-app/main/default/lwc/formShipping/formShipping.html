@@ -1,0 +1,81 @@
+<template>
+    <section class="slds-card slds-p-around_large slds-m-around_medium form-container">
+        <header class="slds-m-bottom_medium">
+            <h2 class="slds-text-heading_large slds-m-bottom_x-small">Shipping information</h2>
+            <p class="slds-text-color_weak">We ship within 2 working days</p>
+        </header>
+
+        <div class="slds-form slds-form_stacked slds-m-bottom_medium">
+            <!-- Full Name -->
+            <div class="slds-form-element slds-m-bottom_medium">
+                <label class="slds-form-element__label" for="fullName">Full Name</label>
+                <div class="slds-form-element__control">
+                    <lightning-input
+                        type="text"
+                        name="fullName"
+                        data-field="fullName"
+                        value={fullName}
+                        placeholder="Full Name"
+                        onchange={handleInputChange}>
+                    </lightning-input>
+                    <lightning-input-field field-name="fullName" class="slds-hide"></lightning-input-field>
+                </div>
+            </div>
+
+            <!-- Location -->
+            <div class="slds-form-element slds-m-bottom_medium">
+                <label class="slds-form-element__label" for="location">Location</label>
+                <div class="slds-form-element__control">
+                    <lightning-combobox
+                        name="location"
+                        data-field="location"
+                        value={location}
+                        placeholder="Select location"
+                        options={locationOptions}
+                        onchange={handleInputChange}>
+                    </lightning-combobox>
+                    <lightning-input-field field-name="location" class="slds-hide"></lightning-input-field>
+                </div>
+            </div>
+
+            <!-- Delivery note -->
+            <div class="slds-form-element slds-m-bottom_medium">
+                <label class="slds-form-element__label" for="deliveryNote">Delivery note</label>
+                <div class="slds-form-element__control">
+                    <lightning-textarea
+                        name="deliveryNote"
+                        data-field="deliveryNote"
+                        value={deliveryNote}
+                        placeholder="Delivery note"
+                        onchange={handleInputChange}>
+                    </lightning-textarea>
+                </div>
+            </div>
+
+            <!-- Terms -->
+            <div class="slds-form-element slds-m-bottom_medium">
+                <div class="slds-form-element__control">
+                    <div class="slds-checkbox">
+                        <input type="checkbox" id="acceptTerms" name="acceptTerms" checked={acceptTerms} data-field="acceptTerms" onchange={handleCheckboxChange}/>
+                        <label class="slds-checkbox__label" for="acceptTerms">
+                            <span class="slds-checkbox_faux"></span>
+                            <span class="slds-form-element__label">I accept the terms</span>
+                        </label>
+                    </div>
+                    <div class="slds-m-left_large slds-m-top_x-small">
+                        <a href="javascript:void(0);" class="slds-text-link">Read our T&Cs</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="slds-m-top_large">
+            <lightning-button
+                variant="brand"
+                label="Save shipping information"
+                onclick={handleSave}
+                class="slds-size_1-of-1">
+            </lightning-button>
+        </footer>
+    </section>
+</template>
