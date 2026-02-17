@@ -1,0 +1,130 @@
+<!--
+  BatchData Property Search LWC
+  - Search form for City+State or Zip
+  - Results in lightning-datatable with property & mortgage summary
+  - Save to Salesforce button
+-->
+<template>
+  <lightning-card title="BatchData Property Search" icon-name="utility:search">
+    <div class="slds-p-around_medium">
+      <div class="slds-grid slds-wrap slds-gutters">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+          <lightning-input
+            type="text"
+            label="City"
+            value={city}
+            onchange={handleCityChange}
+          ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+          <lightning-input
+            type="text"
+            label="State (2-letter)"
+            value={state}
+            maxlength="2"
+            onchange={handleStateChange}
+          ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-3">
+          <lightning-input
+            type="text"
+            label="Zip"
+            value={zip}
+            maxlength="10"
+            onchange={handleZipChange}
+          ></lightning-input>
+        </div>
+
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+          <lightning-input
+            type="number"
+            label="Min Bedrooms"
+            value={minBedrooms}
+            onchange={handleMinBedroomsChange}
+          ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+          <lightning-input
+            type="number"
+            label="Max Bedrooms"
+            value={maxBedrooms}
+            onchange={handleMaxBedroomsChange}
+          ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+          <lightning-input
+            type="number"
+            label="Min Bathrooms"
+            value={minBathrooms}
+            step="0.5"
+            onchange={handleMinBathroomsChange}
+          ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-4">
+          <lightning-input
+            type="number"
+            label="Max Bathrooms"
+            value={maxBathrooms}
+            step="0.5"
+            onchange={handleMaxBathroomsChange}
+          ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+          <lightning-input
+            type="number"
+            label="Min Sqft"
+            value={minSqft}
+            onchange={handleMinSqftChange}
+          ></lightning-input>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+          <lightning-input
+            type="number"
+            label="Max Sqft"
+            value={maxSqft}
+            onchange={handleMaxSqftChange}
+          ></lightning-input>
+        </div>
+      </div>
+
+      <div class="slds-m-top_medium slds-grid slds-gutters">
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2">
+          <lightning-button
+            variant="brand"
+            label="Search"
+            onclick={handleSearch}
+            disabled={isSearchDisabled}
+          ></lightning-button>
+          <template if:true={isLoading}>
+            <lightning-spinner size="small" alternative-text="Loading"></lightning-spinner>
+          </template>
+        </div>
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-2 slds-text-align_right">
+          <lightning-button
+            variant="neutral"
+            label="Save to Salesforce"
+            onclick={handleSave}
+            disabled={isSaveDisabled}
+            icon-name="utility:save"
+          ></lightning-button>
+        </div>
+      </div>
+
+      <template if:true={hasResults}>
+        <div class="slds-m-top_large">
+          <lightning-datatable
+            key-field="externalId"
+            data={rows}
+            columns={columns}
+            hide-checkbox-column
+          >
+          </lightning-datatable>
+        </div>
+      </template>
+
+      <template if:true={showEmpty}>
+        <p class="slds-m-top_large slds-text-color_weak">No results. Adjust filters and try again.</p>
+      </template>
+    </div>
+  </lightning-card>
+</template>
